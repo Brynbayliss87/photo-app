@@ -1,0 +1,16 @@
+<div class="posts-wrapper row">
+   <div class="post">
+      <div class="post-head">
+        <div class="name">Bryn Bayliss</div>
+      </div>
+     <div class="image center-block">
+       <%= image_tag @post.image.url(:medium) %>
+     </div>
+     <div class="caption">
+       <%= @post.caption %>
+     </div>
+     <div class="text-center">
+       <%= link_to "Cancel", posts_path %>
+     </div>
+    </div>
+</div>
