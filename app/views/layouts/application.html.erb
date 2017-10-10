@@ -10,6 +10,11 @@
 
   <body>
     <%= render 'navbar' %>
+    <div class="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag( :div, msg, class: [:alert, alert_for(name)]) %>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
