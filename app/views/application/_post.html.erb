@@ -7,7 +7,7 @@
         <%= post.user.user_name %>
       </div>
       <div class="image center-block">
-        <%= link_to (image_tag, post.image.url(:medium), class: 'img-responsive'), post_path(post) %>
+        <%= link_to (image_tag post.image.url(:medium), class: 'img-responsive'), post_path(post) %>
       </div>
     </div>
     <div class="post-bottom">
@@ -21,15 +21,16 @@
         <% post.comments.each do |comment| %>
           <div class="comment">
 	    <div class="user-name">
-              <% comment.user.user_name %>
+              <%= comment.user.user_name %>
 	    </div>
 	    <div class="comment-content">
               <%= comment.content %>
 	    </div>
 	    <% if comment.user == current_user %>
 	      <%= link_to post_comment_path(post, comment), method: :delete, data: {confirm: "Are you sure?"} do %>
-		      <span class="glyphicon glyphicon-remove-delete-comment"></span>
-	      <% end %>
+		<span class="glyphicon glyphicon-remove-delete-comment"></span>
+              <% end %>
+	    <% end %>
           </div>
         <% end %>
       <% end %>
@@ -40,7 +41,7 @@
       </div>
       <div class="comment-form col-sm-11">
 	<%= form_for [post, post.comments.new] do |f| %>
-		<%= f.text_field :content, placeholder: "Add a comment..." %>
+          <%= f.text_field :content, placeholder: "Add a comment..." %>
         <% end %>
       </div>	
   </div>
