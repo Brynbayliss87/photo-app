@@ -10,6 +10,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_form'
 gem "paperclip"
 gem 'devise'
+gem 'kaminari'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
