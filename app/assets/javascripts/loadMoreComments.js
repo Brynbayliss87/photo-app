@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$function ClickableCommentsLink(){
   $('.more-comments').click(function(){
     $(this).on('ajax:success', function(event){
       var postId = $(this).data("post-id");
@@ -9,4 +9,4 @@ $(document).ready(function(){
       Append.link = false;
     });
   });
-});
+}
