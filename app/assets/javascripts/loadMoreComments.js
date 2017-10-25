@@ -1,4 +1,4 @@
-$function ClickableCommentsLink(){
+function ClickableCommentsLink(){
   $('.more-comments').click(function(){
     $(this).on('ajax:success', function(event){
       var postId = $(this).data("post-id");
