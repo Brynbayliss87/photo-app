@@ -14,5 +14,12 @@ module ApplicationHelper
 	    class: 'image-responsive' if
     post.image.exists?
       image_tag 'placeholder.jpg', id: 'image-preview', class: 'img-responsive'
-  end  
+  end 
+
+  def profile_avatar_select(user)
+    return image_tag user.avatar.url(:medium),
+                     id: 'image-preview',
+		     class: 'image-responsive img-circle profile-image' if user.avatar.exists?
+    image_tag 'default_avatar.jpg', id: 'image-preview', class: 'img-responsive img-circle profile-image'
+  end 
 end
